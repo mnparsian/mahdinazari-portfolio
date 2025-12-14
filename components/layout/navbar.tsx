@@ -128,26 +128,26 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden absolute top-16 left-0 right-0 bg-background border-b shadow-lg p-4 flex flex-col gap-4 animate-in slide-in-from-top-5">
+                <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-background/95 backdrop-blur-xl border-t shadow-lg p-6 flex flex-col gap-6 animate-in slide-in-from-top-5">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
                             href={link.href}
-                            className="text-lg font-medium py-2 border-b border-border/50 last:border-0"
+                            className="text-xl font-medium py-3 border-b border-border/50 last:border-0"
                             onClick={() => setIsMobileMenuOpen(false)}
                         >
                             {link.label}
                         </Link>
                     ))}
-                    <div className="flex items-center justify-between pt-2">
-                        <span className="text-sm font-medium text-muted-foreground">
+                    <div className="flex items-center justify-between pt-4 mt-auto">
+                        <span className="text-base font-medium text-muted-foreground">
                             Language
                         </span>
                         <Button
                             variant="outline"
-                            size="sm"
+                            size="lg"
                             onClick={toggleLanguage}
-                            className="w-20"
+                            className="w-32"
                         >
                             {language === "en" ? "English" : "Italiano"}
                         </Button>

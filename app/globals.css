@@ -9,6 +9,8 @@
   --color-foreground: var(--foreground);
   --color-muted: var(--muted);
   --color-accent: var(--accent);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
 }
 
 :root {
@@ -20,6 +22,8 @@
   --muted: #666666;
   --accent: #0071E3;
   /* Apple Blue-ish */
+  --primary: #111111;
+  --primary-foreground: #FFFFFF;
 }
 
 .dark {
@@ -31,6 +35,8 @@
   --foreground: #F5F5F7;
   --muted: #86868b;
   --accent: #2997FF;
+  --primary: #F5F5F7;
+  --primary-foreground: #000000;
 }
 
 body {
