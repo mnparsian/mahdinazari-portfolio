@@ -37,16 +37,10 @@ export function Contact() {
                 ease: "power3.out",
             });
 
-            // Stagger inputs
-            if (formRef.current) {
-                tl.from(Array.from(formRef.current.children), {
-                    y: 20,
-                    opacity: 0,
-                    stagger: 0.1,
-                    duration: 0.8,
-                    ease: "power2.out"
-                }, "-=0.5");
-            }
+            // Stagger inputs removed to prevent GSAP hydration issues (replaced with CSS)
+            // if (formRef.current) {
+            //    ...
+            // }
         }, sectionRef);
 
         return () => ctx.revert();
@@ -146,7 +140,7 @@ export function Contact() {
                             <Card className="border-0 bg-background/80 backdrop-blur-xl rounded-[22px] overflow-hidden shadow-none">
                                 <CardContent className="p-8 md:p-10">
                                     <form ref={formRef} onSubmit={handleSubmit} className="space-y-6">
-                                        <div className="space-y-2 group">
+                                        <div className="space-y-2 group animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: '100ms' }}>
                                             <label htmlFor="name" className={`text-sm font-medium transition-colors ${focusedField === 'name' ? 'text-primary' : 'text-muted-foreground'}`}>
                                                 {t.contact.name}
                                             </label>
@@ -160,7 +154,7 @@ export function Contact() {
                                                 placeholder="John Doe"
                                             />
                                         </div>
-                                        <div className="space-y-2 group">
+                                        <div className="space-y-2 group animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: '200ms' }}>
                                             <label htmlFor="email" className={`text-sm font-medium transition-colors ${focusedField === 'email' ? 'text-primary' : 'text-muted-foreground'}`}>
                                                 {t.contact.email}
                                             </label>
@@ -175,7 +169,7 @@ export function Contact() {
                                                 placeholder="john@example.com"
                                             />
                                         </div>
-                                        <div className="space-y-2 group">
+                                        <div className="space-y-2 group animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: '300ms' }}>
                                             <label htmlFor="message" className={`text-sm font-medium transition-colors ${focusedField === 'message' ? 'text-primary' : 'text-muted-foreground'}`}>
                                                 {t.contact.message}
                                             </label>
@@ -191,24 +185,26 @@ export function Contact() {
                                             />
                                         </div>
 
-                                        <Button
-                                            type="submit"
-                                            size="lg"
-                                            className="w-full h-12 text-lg font-medium rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg shadow-zinc-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
-                                            disabled={isSubmitting}
-                                        >
-                                            {isSubmitting ? (
-                                                <span className="flex items-center gap-2">
-                                                    <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
-                                                    Sending...
-                                                </span>
-                                            ) : (
-                                                <>
-                                                    {t.contact.send}
-                                                    <Send className="ml-2 h-5 w-5" />
-                                                </>
-                                            )}
-                                        </Button>
+                                        <div className="animate-in fade-in slide-in-from-bottom-4 duration-700 fill-mode-both" style={{ animationDelay: '400ms' }}>
+                                            <Button
+                                                type="submit"
+                                                size="lg"
+                                                className="w-full h-12 text-lg font-medium rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg shadow-zinc-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
+                                                disabled={isSubmitting}
+                                            >
+                                                {isSubmitting ? (
+                                                    <span className="flex items-center gap-2">
+                                                        <span className="h-4 w-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                                                        Sending...
+                                                    </span>
+                                                ) : (
+                                                    <>
+                                                        {t.contact.send}
+                                                        <Send className="ml-2 h-5 w-5" />
+                                                    </>
+                                                )}
+                                            </Button>
+                                        </div>
                                     </form>
                                 </CardContent>
                             </Card>

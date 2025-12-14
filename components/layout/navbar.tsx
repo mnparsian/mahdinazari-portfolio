@@ -128,7 +128,7 @@ export function Navbar() {
 
             {/* Mobile Menu */}
             {isMobileMenuOpen && (
-                <div className="md:hidden fixed top-16 left-0 right-0 bottom-0 z-40 bg-background/95 backdrop-blur-xl border-t shadow-lg p-6 flex flex-col gap-6 animate-in slide-in-from-top-5">
+                <div className="md:hidden fixed top-16 left-0 right-0 h-[calc(100dvh-4rem)] z-40 bg-background/95 backdrop-blur-xl border-t shadow-lg p-6 flex flex-col gap-6 animate-in slide-in-from-top-5 overflow-y-auto">
                     {navLinks.map((link) => (
                         <Link
                             key={link.href}
