@@ -194,7 +194,7 @@ export function Contact() {
                                         <Button
                                             type="submit"
                                             size="lg"
-                                            className="w-full h-12 text-lg font-medium rounded-xl bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 transform hover:-translate-y-0.5"
+                                            className="w-full h-12 text-lg font-medium rounded-xl bg-zinc-900 text-white dark:bg-zinc-100 dark:text-zinc-900 hover:bg-zinc-800 dark:hover:bg-zinc-200 shadow-lg shadow-zinc-500/20 transition-all duration-300 transform hover:-translate-y-0.5"
                                             disabled={isSubmitting}
                                         >
                                             {isSubmitting ? (
