@@ -5,6 +5,7 @@ import { useLanguage } from "@/lib/i18n/context";
 import { Section } from "@/components/ui/section";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data/projects";
+import { VideoPlayer } from "@/components/ui/video-player";
 import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import gsap from "gsap";
@@ -86,12 +87,10 @@ export function FeaturedProjects() {
                         <div className="w-full lg:w-3/5 aspect-video bg-muted rounded-xl overflow-hidden relative group shadow-lg">
                             <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
                             {project.videoUrl ? (
-                                <iframe
+                                <VideoPlayer
                                     src={project.videoUrl}
                                     title={project.title}
                                     className="w-full h-full"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
                                 />
                             ) : project.image ? (
                                 // eslint-disable-next-line @next/next/no-img-element

@@ -6,6 +6,7 @@ import { Section } from "@/components/ui/section";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { projects } from "@/lib/data/projects";
+import { VideoPlayer } from "@/components/ui/video-player";
 import { useLanguage } from "@/lib/i18n/context";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
@@ -34,12 +35,13 @@ export default function ProjectsPage() {
                             <Card key={project.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow border-border/50">
                                 <div className="aspect-video bg-muted relative group overflow-hidden">
                                     {project.videoUrl ? (
-                                        <iframe
-                                            src={project.videoUrl}
-                                            title={project.title}
-                                            className="w-full h-full pointer-events-none" // Disable interaction in list view
-                                            tabIndex={-1}
-                                        />
+                                        <div className="w-full h-full pointer-events-none" tabIndex={-1}>
+                                            <VideoPlayer
+                                                src={project.videoUrl}
+                                                title={project.title}
+                                                className="w-full h-full"
+                                            />
+                                        </div>
                                     ) : project.image ? (
                                         // eslint-disable-next-line @next/next/no-img-element
                                         <img
