@@ -11,7 +11,8 @@ export interface Project {
     };
     techStack: string[];
     featured: boolean;
-    image: string; // Placeholder path
+    image?: string; // Placeholder path
+    videoUrl?: string; // YouTube Embed URL
     gallery?: string[];
     liveUrl?: string;
     githubUrl?: string;
@@ -31,32 +32,36 @@ export interface Project {
 
 export const projects: Project[] = [
     {
-        slug: "ai-analytics-dashboard",
-        title: "AI Analytics Dashboard",
+        slug: "creator-ai",
+        title: "CreatorAi",
         shortDescription: {
-            en: "Real-time AI-powered analytics platform for enterprise data.",
-            it: "Piattaforma di analisi in tempo reale basata su IA per dati aziendali.",
+            en: "All-in-one AI platform to supercharge content creation for digital marketers.",
+            it: "Piattaforma IA all-in-one per potenziare la creazione di contenuti per il digital marketing.",
         },
         description: {
-            en: "A comprehensive dashboard that leverages machine learning to provide predictive analytics and real-time insights for large-scale enterprise datasets.",
-            it: "Una dashboard completa che sfrutta il machine learning per fornire analisi predittive e approfondimenti in tempo reale per set di dati aziendali su larga scala.",
+            en: "A comprehensive SaaS platform that leverages advanced AI models to generate high-quality text, images, and creative assets instantly.",
+            it: "Una piattaforma SaaS completa che sfrutta modelli IA avanzati per generare istantaneamente testo, immagini e asset creativi di alta qualità.",
         },
-        techStack: ["Next.js", "Python", "TensorFlow", "PostgreSQL"],
+        techStack: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS", "Supabase"],
         featured: true,
-        image: "/images/projects/project-1.jpg",
-        liveUrl: "https://example.com",
-        githubUrl: "https://github.com",
+
+        // تغییر مهم اینجاست:
+        // image: "/images/projects/creator-ai.jpg", // اگر خواستی عکس کاور داشته باشی این خط را نگه دار
+        videoUrl: "https://youtu.be/l2kFyr_fMbs", // لینک Embed یوتیوب
+
+        liveUrl: "https://creatorai.mahdinazari.net",
+        githubUrl: "#",
         problem: {
-            en: "Enterprises struggle to make sense of vast amounts of unstructured data in real-time.",
-            it: "Le aziende faticano a dare un senso a grandi quantità di dati non strutturati in tempo reale.",
+            en: "Content creators struggle to maintain consistency...",
+            it: "I content creator faticano a mantenere coerenza...",
         },
         solution: {
-            en: "We built a scalable architecture using Next.js for the frontend and Python microservices for AI processing, delivering insights in milliseconds.",
-            it: "Abbiamo costruito un'architettura scalabile utilizzando Next.js per il frontend e microservizi Python per l'elaborazione IA, fornendo approfondimenti in millisecondi.",
+            en: "We developed a centralized dashboard...",
+            it: "Abbiamo sviluppato una dashboard centralizzata...",
         },
         features: {
-            en: ["Real-time data visualization", "Predictive modeling", "Customizable reporting"],
-            it: ["Visualizzazione dati in tempo reale", "Modellazione predittiva", "Reportistica personalizzabile"],
+            en: ["AI Text Generation", "Image Synthesis", "Multi-language Support"],
+            it: ["Generazione Testo IA", "Sintesi Immagini", "Supporto Multilingua"],
         },
     },
     {

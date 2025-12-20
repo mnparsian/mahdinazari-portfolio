@@ -96,8 +96,28 @@ export default function ProjectDetailPage() {
                     {/* Left Column: Details */}
                     <div className="md:col-span-2 space-y-16">
                         {/* Image Placeholder */}
-                        <div className="aspect-video bg-muted rounded-xl border flex items-center justify-center text-muted-foreground">
-                            Project Screenshot / Demo Video
+                        {/* Media Section */}
+                        <div className="aspect-video bg-muted rounded-xl border overflow-hidden relative shadow-lg">
+                            {project.videoUrl ? (
+                                <iframe
+                                    src={project.videoUrl}
+                                    title={project.title}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : project.image ? (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover"
+                                />
+                            ) : (
+                                <div className="w-full h-full flex items-center justify-center text-muted-foreground">
+                                    Project Screenshot / Demo Video
+                                </div>
+                            )}
                         </div>
 
                         {/* Problem & Solution */}

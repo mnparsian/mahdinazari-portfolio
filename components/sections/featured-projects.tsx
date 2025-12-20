@@ -84,12 +84,29 @@ export function FeaturedProjects() {
                     >
                         {/* Project Image Placeholder */}
                         <div className="w-full lg:w-3/5 aspect-video bg-muted rounded-xl overflow-hidden relative group shadow-lg">
-                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                            <div className="w-full h-full flex items-center justify-center bg-card border border-border">
-                                <span className="text-muted-foreground font-medium">
-                                    {project.title} Preview
-                                </span>
-                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10 pointer-events-none" />
+                            {project.videoUrl ? (
+                                <iframe
+                                    src={project.videoUrl}
+                                    title={project.title}
+                                    className="w-full h-full"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowFullScreen
+                                />
+                            ) : project.image ? (
+                                // eslint-disable-next-line @next/next/no-img-element
+                                <img
+                                    src={project.image}
+                                    alt={project.title}
+                                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                />
+                            ) : (
+                                <div className="w-full h-full flex items-center justify-center bg-card border border-border">
+                                    <span className="text-muted-foreground font-medium">
+                                        {project.title} Preview
+                                    </span>
+                                </div>
+                            )}
                         </div>
 
                         {/* Project Info */}

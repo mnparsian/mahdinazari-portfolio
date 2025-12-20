@@ -33,10 +33,26 @@ export default function ProjectsPage() {
                         {projects.map((project) => (
                             <Card key={project.slug} className="flex flex-col overflow-hidden hover:shadow-lg transition-shadow border-border/50">
                                 <div className="aspect-video bg-muted relative group overflow-hidden">
-                                    <div className="absolute inset-0 flex items-center justify-center text-muted-foreground font-medium">
-                                        {project.title} Preview
-                                    </div>
-                                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                                    {project.videoUrl ? (
+                                        <iframe
+                                            src={project.videoUrl}
+                                            title={project.title}
+                                            className="w-full h-full pointer-events-none" // Disable interaction in list view
+                                            tabIndex={-1}
+                                        />
+                                    ) : project.image ? (
+                                        // eslint-disable-next-line @next/next/no-img-element
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div className="absolute inset-0 flex items-center justify-center text-muted-foreground font-medium">
+                                            {project.title} Preview
+                                        </div>
+                                    )}
+                                    <div className="absolute inset-0 bg-primary/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
                                 </div>
                                 <CardHeader>
                                     <CardTitle className="line-clamp-1">{project.title}</CardTitle>
