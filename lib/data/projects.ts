@@ -39,10 +39,18 @@ export const projects: Project[] = [
             it: "Piattaforma IA all-in-one per potenziare la creazione di contenuti per il digital marketing.",
         },
         description: {
-            en: "A comprehensive SaaS platform that leverages advanced AI models to generate high-quality text, images, and creative assets instantly.",
-            it: "Una piattaforma SaaS completa che sfrutta modelli IA avanzati per generare istantaneamente testo, immagini e asset creativi di alta qualità.",
+            en: `CreatorAI is a full-stack web application developed to demonstrate practical experience in building AI-powered platforms.
+The project focuses on designing a centralized dashboard that integrates AI text generation, image synthesis, and multilingual support into a single workflow.
+
+The main goal of the project is to address common challenges in content production such as tool fragmentation, inconsistency, and time inefficiency.
+From an engineering perspective, the application emphasizes clean architecture, scalability, and maintainability.`,
+            it: `CreatorAI è un’applicazione web full-stack sviluppata come progetto dimostrativo per mostrare competenze reali nella creazione di piattaforme basate su intelligenza artificiale.
+Il progetto si concentra sulla progettazione di una dashboard centralizzata che integra generazione di testi AI, sintesi di immagini e supporto multilingua in un unico flusso di lavoro.
+
+L’obiettivo principale è affrontare problemi comuni nella produzione di contenuti, come la frammentazione degli strumenti, la mancanza di coerenza e l’inefficienza temporale.
+Dal punto di vista tecnico, l’applicazione è progettata con attenzione a architettura pulita, scalabilità e manutenibilità.`,
         },
-        techStack: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS", "Supabase"],
+        techStack: ["Next.js", "TypeScript", "OpenAI API", "Tailwind CSS", "PostgresSQL", "Spring Boot"],
         featured: true,
 
         // تغییر مهم اینجاست:
@@ -50,18 +58,22 @@ export const projects: Project[] = [
         videoUrl: "https://youtu.be/l2kFyr_fMbs", // Valid YouTube video for demo
 
         liveUrl: "https://creatorai.mahdinazari.net",
-        githubUrl: "#",
+        githubUrl: "https://github.com/mnparsian/creator-ai-frontend",
         problem: {
-            en: "Content creators struggle to maintain consistency...",
-            it: "I content creator faticano a mantenere coerenza...",
+            en: `Content creators often rely on multiple disconnected tools for writing, visuals, and localization.
+This fragmentation leads to inconsistent output, repetitive workflows, and wasted time, making it difficult to maintain quality and focus on the creative process.`,
+            it: `I content creator utilizzano spesso strumenti separati per testi, immagini e localizzazione.
+Questa frammentazione provoca incoerenza nei contenuti, flussi di lavoro ridondanti e perdita di tempo, riducendo l’efficienza del processo creativo.`,
         },
         solution: {
-            en: "We developed a centralized dashboard...",
-            it: "Abbiamo sviluppato una dashboard centralizzata...",
+            en: `A centralized AI-powered dashboard that brings text generation, image synthesis, and multilingual support into a single workflow.
+The solution simplifies content production, improves consistency, and demonstrates a structured approach to designing scalable, maintainable AI-driven applications.`,
+            it: `I content creator utilizzano spesso strumenti separati per testi, immagini e localizzazione.
+Questa frammentazione provoca incoerenza nei contenuti, flussi di lavoro ridondanti e perdita di tempo, riducendo l’efficienza del processo creativo.`,
         },
         features: {
-            en: ["AI Text Generation", "Image Synthesis", "Multi-language Support"],
-            it: ["Generazione Testo IA", "Sintesi Immagini", "Supporto Multilingua"],
+            en: ["AI Text Generation", "Multi-language Support"],
+            it: ["Generazione Testo IA", "Supporto Multilingua"],
         },
     },
     {

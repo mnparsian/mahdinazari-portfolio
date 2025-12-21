@@ -102,7 +102,7 @@ export function Contact() {
 
                         <div className="space-y-6">
                             <a
-                                href="mailto:mnparsians@gmail.com"
+                                href="mailto:support@mahdinazari.net"
                                 className="group relative flex items-center gap-6 p-6 rounded-2xl bg-surface/50 border border-white/5 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-primary/20 hover:shadow-lg"
                             >
                                 <div className="absolute inset-0 bg-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -112,7 +112,7 @@ export function Contact() {
                                 </div>
                                 <div className="relative">
                                     <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">{t.contact.email}</p>
-                                    <p className="text-lg font-semibold text-foreground mt-1 group-hover:text-primary transition-colors">mnparsians@gmail.com</p>
+                                    <p className="text-lg font-semibold text-foreground mt-1 group-hover:text-primary transition-colors">support@mahdinazari.net</p>
                                 </div>
                                 <ArrowUpRight className="ml-auto h-5 w-5 text-muted-foreground group-hover:text-primary transition-colors" />
                             </a>

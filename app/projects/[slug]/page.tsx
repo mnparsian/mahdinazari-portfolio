@@ -56,7 +56,7 @@ export default function ProjectDetailPage() {
                         <h1 className="text-4xl md:text-7xl font-bold font-heading leading-tight text-foreground">
                             {project.title}
                         </h1>
-                        <p className="text-xl md:text-3xl text-foreground/80 leading-relaxed max-w-2xl">
+                        <p className="text-xl md:text-3xl text-foreground/80 leading-relaxed max-w-3xl">
                             {project.description[language]}
                         </p>
 
