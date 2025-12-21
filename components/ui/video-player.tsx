@@ -20,11 +20,18 @@ export function VideoPlayer({
 }: VideoPlayerProps) {
     const getEmbedUrl = (url: string) => {
         // YouTube Regular: youtube.com/watch?v=ID
-        const youtubeRegExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+        const youtubeRegExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&?]*).*/;
         const match = url.match(youtubeRegExp);
 
         if (match && match[2].length === 11) {
-            return `https://www.youtube.com/embed/${match[2]}?autoplay=${autoPlay ? 1 : 0}`;
+            const videoId = match[2];
+            const params = new URLSearchParams({
+                autoplay: autoPlay ? '1' : '0',
+                rel: '0',
+                modestbranding: '1',
+                enablejsapi: '1'
+            });
+            return `https://www.youtube.com/embed/${videoId}?${params.toString()}`;
         }
 
         return url;
@@ -56,14 +63,16 @@ export function VideoPlayer({
     const embedUrl = getEmbedUrl(src);
 
     return (
-        <div className={cn("relative w-full h-full bg-black", className)} {...props}>
-            <iframe
-                src={embedUrl}
-                title={title}
-                className="w-full h-full"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-            />
+        <div className={cn("relative w-full bg-black", className)} {...props}>
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+                <iframe
+                    src={embedUrl}
+                    title={title}
+                    className="absolute top-0 left-0 w-full h-full"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
+            </div>
         </div>
     );
 }

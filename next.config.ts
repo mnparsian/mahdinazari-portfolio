@@ -36,7 +36,9 @@ const nextConfig: NextConfig = {
               "default-src 'self'; " +
               "connect-src 'self' https://portfolio.mahdinazari.net; " +
               "script-src 'self' 'unsafe-eval' 'unsafe-inline'; " +
-              "style-src 'self' 'unsafe-inline';"
+              "style-src 'self' 'unsafe-inline'; " +
+              "frame-src 'self' https://www.youtube.com https://youtube.com; " +
+              "img-src 'self' https: data:;"
           }
 
         ]

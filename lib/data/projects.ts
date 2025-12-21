@@ -47,7 +47,7 @@ export const projects: Project[] = [
 
         // تغییر مهم اینجاست:
         // image: "/images/projects/creator-ai.jpg", // اگر خواستی عکس کاور داشته باشی این خط را نگه دار
-        videoUrl: "https://www.youtube.com/watch?v=l2kFyr_fMbs", // لینک Embed یوتیوب
+        videoUrl: "https://youtu.be/l2kFyr_fMbs", // Valid YouTube video for demo
 
         liveUrl: "https://creatorai.mahdinazari.net",
         githubUrl: "#",
